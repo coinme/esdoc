@@ -7,10 +7,13 @@
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/typhonjs-node-esdoc/esdoc.git"
+    "url": "https://github.com/coinme/esdoc.git"
   },
-  "maintainers": [
-    {
+  "maintainers": [{
+    "name": "Coinme",
+    "email": "support@coinme.com",
+    "url": "https://github.com/coinme"
+  },{
       "name": "Mike Leahy",
       "email": "support@typhonjs.io",
       "url": "https://github.com/typhonrt"
@@ -26,7 +29,7 @@
     "babel-generator": "^6.0.0",
     "babel-polyfill": "^6.0.0",
     "babylon": "^6.0.0",
-    "cheerio": "^0.20.0",
+    "cheerio": "^0.22.0",
     "color-logger": "^0.0.6",
     "escape-html": "^1.0.0",
     "fs-extra": "^0.30.0",
