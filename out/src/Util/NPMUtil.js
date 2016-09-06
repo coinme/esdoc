@@ -21,7 +21,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /**
  * Node Package Manager(npm) util class.
  */
-
 var NPMUtil = function () {
   function NPMUtil() {
     _classCallCheck(this, NPMUtil);

@@ -17,7 +17,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /**
  * logger for invalid code which can not be parsed with ESDoc.
  */
-
 var InvalidCodeLogger = function () {
   function InvalidCodeLogger() {
     _classCallCheck(this, InvalidCodeLogger);

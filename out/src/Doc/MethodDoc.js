@@ -31,14 +31,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Doc Class from Method Definition AST node.
  */
-
 var MethodDoc = function (_AbstractDoc) {
   _inherits(MethodDoc, _AbstractDoc);
 
   function MethodDoc() {
     _classCallCheck(this, MethodDoc);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(MethodDoc).apply(this, arguments));
+    return _possibleConstructorReturn(this, (MethodDoc.__proto__ || Object.getPrototypeOf(MethodDoc)).apply(this, arguments));
   }
 
   _createClass(MethodDoc, [{
@@ -49,7 +48,7 @@ var MethodDoc = function (_AbstractDoc) {
      * @private
      */
     value: function _apply() {
-      _get(Object.getPrototypeOf(MethodDoc.prototype), '_apply', this).call(this);
+      _get(MethodDoc.prototype.__proto__ || Object.getPrototypeOf(MethodDoc.prototype), '_apply', this).call(this);
 
       delete this._value.export;
       delete this._value.importPath;
@@ -111,7 +110,7 @@ var MethodDoc = function (_AbstractDoc) {
   }, {
     key: '@param',
     value: function param() {
-      _get(Object.getPrototypeOf(MethodDoc.prototype), '@param', this).call(this);
+      _get(MethodDoc.prototype.__proto__ || Object.getPrototypeOf(MethodDoc.prototype), '@param', this).call(this);
       if (this._value.params) return;
 
       if (['set', 'get'].includes(this._value.kind)) return;
@@ -124,7 +123,7 @@ var MethodDoc = function (_AbstractDoc) {
   }, {
     key: '@type',
     value: function type() {
-      _get(Object.getPrototypeOf(MethodDoc.prototype), '@type', this).call(this);
+      _get(MethodDoc.prototype.__proto__ || Object.getPrototypeOf(MethodDoc.prototype), '@type', this).call(this);
       if (this._value.type) return;
 
       switch (this._value.kind) {
@@ -143,7 +142,7 @@ var MethodDoc = function (_AbstractDoc) {
   }, {
     key: '@return',
     value: function _return() {
-      _get(Object.getPrototypeOf(MethodDoc.prototype), '@return', this).call(this);
+      _get(MethodDoc.prototype.__proto__ || Object.getPrototypeOf(MethodDoc.prototype), '@return', this).call(this);
       if (this._value.return) return;
 
       if (['constructor', 'set', 'get'].includes(this._value.kind)) return;
@@ -159,7 +158,7 @@ var MethodDoc = function (_AbstractDoc) {
   }, {
     key: '@_generator',
     value: function _generator() {
-      _get(Object.getPrototypeOf(MethodDoc.prototype), '@_generator', this).call(this);
+      _get(MethodDoc.prototype.__proto__ || Object.getPrototypeOf(MethodDoc.prototype), '@_generator', this).call(this);
       if ('generator' in this._value) return;
 
       this._value.generator = this._node.generator;

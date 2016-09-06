@@ -48,7 +48,7 @@ var LintDocBuilder = function (_DocBuilder) {
   function LintDocBuilder() {
     _classCallCheck(this, LintDocBuilder);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(LintDocBuilder).apply(this, arguments));
+    return _possibleConstructorReturn(this, (LintDocBuilder.__proto__ || Object.getPrototypeOf(LintDocBuilder)).apply(this, arguments));
   }
 
   _createClass(LintDocBuilder, [{
@@ -195,8 +195,8 @@ var LintDocBuilder = function (_DocBuilder) {
         if (codeParams[i] === '*') {
           // nothing
         } else if (codeParams[i] !== docParams[i]) {
-            return false;
-          }
+          return false;
+        }
       }
 
       return true;

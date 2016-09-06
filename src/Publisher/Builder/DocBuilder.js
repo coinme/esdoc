@@ -709,7 +709,7 @@ export default class DocBuilder {
         innerTypes = inner.split(',').map((v)=>{
           let tmp = v.split(':').map((v)=> v.trim());
           let paramName = tmp[0];
-          let typeName = tmp[1].replace(/\\Z/g, ',').replace(/\\Y/g, ':');
+          let typeName = (tmp[1]|'').replace(/\\Z/g, ',').replace(/\\Y/g, ':');
           return `${paramName}: ${this._buildTypeDocLinkHTML(typeName)}`;
         });
       }
@@ -736,7 +736,7 @@ export default class DocBuilder {
       let innerTypes = inner.split(',').map((v)=>{
         let tmp = v.split(':').map((v)=> v.trim());
         let paramName = tmp[0];
-        let typeName = tmp[1].replace(/\\Z/g, ',').replace(/\\Y/g, ':');
+        let typeName = (tmp[1]||'').replace(/\\Z/g, ',').replace(/\\Y/g, ':');
         if (typeName.includes('|')) {
           typeName = typeName.replace(/^\(/, '').replace(/\)$/, '');
           let typeNames = typeName.split('|').map(v => v.trim());
@@ -763,6 +763,7 @@ export default class DocBuilder {
         .replace(/<.*?>/g, (a)=> a.replace(/,/g, '\\Z'))
         .replace(/{.*?}/g, (a)=> a.replace(/,/g, '\\Z').replace(/:/g, '\\Y'));
       let innerTypes = inner.split(',').map((v) => {
+        v = v || '';
         v = v.trim().replace(/\\Z/g, ',').replace(/\\Y/g, ':');
         return this._buildTypeDocLinkHTML(v);
       });
@@ -915,10 +916,12 @@ export default class DocBuilder {
     ice.text('title', title);
 
     ice.loop('property', properties, (i, prop, ice)=>{
+      let depth = Math.max((prop.name || '').split('.').length - 1, 0);
+
       ice.autoDrop = false;
-      ice.attr('property', 'data-depth', prop.name.split('.').length - 1);
+      ice.attr('property', 'data-depth', depth);
       ice.text('name', prop.name);
-      ice.attr('name', 'data-depth', prop.name.split('.').length - 1);
+      ice.attr('name', 'data-depth', depth);
       ice.load('description', prop.description);
 
       let typeNames = [];

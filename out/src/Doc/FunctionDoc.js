@@ -20,6 +20,10 @@ var _NamingUtil = require('../Util/NamingUtil.js');
 
 var _NamingUtil2 = _interopRequireDefault(_NamingUtil);
 
+var _colorLogger = require('color-logger');
+
+var _colorLogger2 = _interopRequireDefault(_colorLogger);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31,14 +35,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Doc Class from Function declaration AST node.
  */
-
 var FunctionDoc = function (_AbstractDoc) {
   _inherits(FunctionDoc, _AbstractDoc);
 
   function FunctionDoc() {
     _classCallCheck(this, FunctionDoc);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(FunctionDoc).apply(this, arguments));
+    return _possibleConstructorReturn(this, (FunctionDoc.__proto__ || Object.getPrototypeOf(FunctionDoc)).apply(this, arguments));
   }
 
   _createClass(FunctionDoc, [{
@@ -46,7 +49,7 @@ var FunctionDoc = function (_AbstractDoc) {
 
     /** specify ``function`` to kind. */
     value: function _kind() {
-      _get(Object.getPrototypeOf(FunctionDoc.prototype), '@_kind', this).call(this);
+      _get(FunctionDoc.prototype.__proto__ || Object.getPrototypeOf(FunctionDoc.prototype), '@_kind', this).call(this);
       if (this._value.kind) return;
       this._value.kind = 'function';
     }
@@ -56,11 +59,27 @@ var FunctionDoc = function (_AbstractDoc) {
   }, {
     key: '@_name',
     value: function _name() {
-      _get(Object.getPrototypeOf(FunctionDoc.prototype), '@_name', this).call(this);
+      _get(FunctionDoc.prototype.__proto__ || Object.getPrototypeOf(FunctionDoc.prototype), '@_name', this).call(this);
       if (this._value.name) return;
 
       if (this._node.id) {
-        this._value.name = this._node.id.name;
+        switch (this._node.id.type) {
+          case 'Identifier':
+            this._value.name = this._node.id.name;
+            break;
+
+          case 'StringLiteral':
+            this._value.name = this._node.id.value;
+            break;
+
+          case 'MemberExpression':
+            this._value.name = this._node.id.object.name + '.' + this._node.id.property.name;
+            break;
+
+          default:
+            _colorLogger2.default.w('can not resolve name.');
+            this._value.name = undefined;
+        }
       } else {
         this._value.name = _NamingUtil2.default.filePathToName(this._pathResolver.filePath);
       }
@@ -71,7 +90,7 @@ var FunctionDoc = function (_AbstractDoc) {
   }, {
     key: '@_memberof',
     value: function _memberof() {
-      _get(Object.getPrototypeOf(FunctionDoc.prototype), '@_memberof', this).call(this);
+      _get(FunctionDoc.prototype.__proto__ || Object.getPrototypeOf(FunctionDoc.prototype), '@_memberof', this).call(this);
       if (this._value.memberof) return;
       this._value.memberof = this._pathResolver.filePath;
     }
@@ -81,7 +100,7 @@ var FunctionDoc = function (_AbstractDoc) {
   }, {
     key: '@_generator',
     value: function _generator() {
-      _get(Object.getPrototypeOf(FunctionDoc.prototype), '@_generator', this).call(this);
+      _get(FunctionDoc.prototype.__proto__ || Object.getPrototypeOf(FunctionDoc.prototype), '@_generator', this).call(this);
       if ('generator' in this._value) return;
 
       this._value.generator = this._node.generator;
@@ -92,7 +111,7 @@ var FunctionDoc = function (_AbstractDoc) {
   }, {
     key: '@param',
     value: function param() {
-      _get(Object.getPrototypeOf(FunctionDoc.prototype), '@param', this).call(this);
+      _get(FunctionDoc.prototype.__proto__ || Object.getPrototypeOf(FunctionDoc.prototype), '@param', this).call(this);
       if (this._value.params) return;
 
       this._value.params = _ParamParser2.default.guessParams(this._node.params);
@@ -103,7 +122,7 @@ var FunctionDoc = function (_AbstractDoc) {
   }, {
     key: '@return',
     value: function _return() {
-      _get(Object.getPrototypeOf(FunctionDoc.prototype), '@return', this).call(this);
+      _get(FunctionDoc.prototype.__proto__ || Object.getPrototypeOf(FunctionDoc.prototype), '@return', this).call(this);
       if (this._value.return) return;
 
       var result = _ParamParser2.default.guessReturnParam(this._node.body);

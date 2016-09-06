@@ -29,14 +29,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Identifier output builder class.
  */
-
 var IdentifiersDocBuilder = function (_DocBuilder) {
   _inherits(IdentifiersDocBuilder, _DocBuilder);
 
   function IdentifiersDocBuilder() {
     _classCallCheck(this, IdentifiersDocBuilder);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(IdentifiersDocBuilder).apply(this, arguments));
+    return _possibleConstructorReturn(this, (IdentifiersDocBuilder.__proto__ || Object.getPrototypeOf(IdentifiersDocBuilder)).apply(this, arguments));
   }
 
   _createClass(IdentifiersDocBuilder, [{

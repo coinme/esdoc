@@ -42,7 +42,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * Abstract Doc Class.
  * @todo rename this class name.
  */
-
 var AbstractDoc = function () {
   /**
    * create instance.
@@ -51,7 +50,6 @@ var AbstractDoc = function () {
    * @param {PathResolver} pathResolver - this is file path resolver that contains this doc.
    * @param {Tag[]} commentTags - this is tags that self node has.
    */
-
   function AbstractDoc(ast, node, pathResolver) {
     var commentTags = arguments.length <= 3 || arguments[3] === undefined ? [] : arguments[3];
 

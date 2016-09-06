@@ -25,14 +25,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Coverage output builder class.
  */
-
 var CoverageBuilder = function (_DocBuilder) {
   _inherits(CoverageBuilder, _DocBuilder);
 
   function CoverageBuilder() {
     _classCallCheck(this, CoverageBuilder);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(CoverageBuilder).apply(this, arguments));
+    return _possibleConstructorReturn(this, (CoverageBuilder.__proto__ || Object.getPrototypeOf(CoverageBuilder)).apply(this, arguments));
   }
 
   _createClass(CoverageBuilder, [{

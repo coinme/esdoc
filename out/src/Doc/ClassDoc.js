@@ -37,14 +37,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Doc Class from Class Declaration AST node.
  */
-
 var ClassDoc = function (_AbstractDoc) {
   _inherits(ClassDoc, _AbstractDoc);
 
   function ClassDoc() {
     _classCallCheck(this, ClassDoc);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(ClassDoc).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ClassDoc.__proto__ || Object.getPrototypeOf(ClassDoc)).apply(this, arguments));
   }
 
   _createClass(ClassDoc, [{
@@ -55,7 +54,7 @@ var ClassDoc = function (_AbstractDoc) {
      * @private
      */
     value: function _apply() {
-      _get(Object.getPrototypeOf(ClassDoc.prototype), '_apply', this).call(this);
+      _get(ClassDoc.prototype.__proto__ || Object.getPrototypeOf(ClassDoc.prototype), '_apply', this).call(this);
 
       this['@interface']();
       this['@extends']();
@@ -67,7 +66,7 @@ var ClassDoc = function (_AbstractDoc) {
   }, {
     key: '@_kind',
     value: function _kind() {
-      _get(Object.getPrototypeOf(ClassDoc.prototype), '@_kind', this).call(this);
+      _get(ClassDoc.prototype.__proto__ || Object.getPrototypeOf(ClassDoc.prototype), '@_kind', this).call(this);
       if (this._value.kind) return;
       this._value.kind = 'class';
     }
@@ -77,7 +76,7 @@ var ClassDoc = function (_AbstractDoc) {
   }, {
     key: '@_name',
     value: function _name() {
-      _get(Object.getPrototypeOf(ClassDoc.prototype), '@_name', this).call(this);
+      _get(ClassDoc.prototype.__proto__ || Object.getPrototypeOf(ClassDoc.prototype), '@_name', this).call(this);
       if (this._value.name) return;
 
       if (this._node.id) {
@@ -92,7 +91,7 @@ var ClassDoc = function (_AbstractDoc) {
   }, {
     key: '@_memberof',
     value: function _memberof() {
-      _get(Object.getPrototypeOf(ClassDoc.prototype), '@_memberof', this).call(this);
+      _get(ClassDoc.prototype.__proto__ || Object.getPrototypeOf(ClassDoc.prototype), '@_memberof', this).call(this);
       if (this._value.memberof) return;
       this._value.memberof = this._pathResolver.filePath;
     }
@@ -177,8 +176,8 @@ var ClassDoc = function (_AbstractDoc) {
                 var fullIdentifier = this._flattenMemberExpression(target);
                 var rootIdentifier = fullIdentifier.split('.')[0];
                 var rootLongname = this._resolveLongname(rootIdentifier);
-                var filePath = rootLongname.replace(/~.*/, '');
-                longnames.push(filePath + '~' + fullIdentifier);
+                var _filePath = rootLongname.replace(/~.*/, '');
+                longnames.push(_filePath + '~' + fullIdentifier);
                 break;
             }
           }

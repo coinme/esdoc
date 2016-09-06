@@ -27,14 +27,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Search index of identifier builder class.
  */
-
 var SearchIndexBuilder = function (_DocBuilder) {
   _inherits(SearchIndexBuilder, _DocBuilder);
 
   function SearchIndexBuilder() {
     _classCallCheck(this, SearchIndexBuilder);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(SearchIndexBuilder).apply(this, arguments));
+    return _possibleConstructorReturn(this, (SearchIndexBuilder.__proto__ || Object.getPrototypeOf(SearchIndexBuilder)).apply(this, arguments));
   }
 
   _createClass(SearchIndexBuilder, [{

@@ -35,14 +35,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Manual Output Builder class.
  */
-
 var ManualDocBuilder = function (_DocBuilder) {
   _inherits(ManualDocBuilder, _DocBuilder);
 
   function ManualDocBuilder() {
     _classCallCheck(this, ManualDocBuilder);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(ManualDocBuilder).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ManualDocBuilder.__proto__ || Object.getPrototypeOf(ManualDocBuilder)).apply(this, arguments));
   }
 
   _createClass(ManualDocBuilder, [{

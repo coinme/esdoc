@@ -41,14 +41,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /**
  * Builder base class.
  */
-
 var DocBuilder = function () {
   /**
    * create instance.
    * @param {Taffy} data - doc object database.
    * @param {ESDocConfig} config - esdoc config is used build output.
    */
-
   function DocBuilder(data, config) {
     _classCallCheck(this, DocBuilder);
 
@@ -941,7 +939,7 @@ var DocBuilder = function () {
               return v.trim();
             });
             var paramName = tmp[0];
-            var typeName = tmp[1].replace(/\\Z/g, ',').replace(/\\Y/g, ':');
+            var typeName = (tmp[1] | '').replace(/\\Z/g, ',').replace(/\\Y/g, ':');
             return paramName + ': ' + _this4._buildTypeDocLinkHTML(typeName);
           });
         }
@@ -972,7 +970,7 @@ var DocBuilder = function () {
             return v.trim();
           });
           var paramName = tmp[0];
-          var typeName = tmp[1].replace(/\\Z/g, ',').replace(/\\Y/g, ':');
+          var typeName = (tmp[1] || '').replace(/\\Z/g, ',').replace(/\\Y/g, ':');
           if (typeName.includes('|')) {
             typeName = typeName.replace(/^\(/, '').replace(/\)$/, '');
             var typeNames = typeName.split('|').map(function (v) {
@@ -1025,6 +1023,7 @@ var DocBuilder = function () {
           return a.replace(/,/g, '\\Z').replace(/:/g, '\\Y');
         });
         var _innerTypes2 = _inner2.split(',').map(function (v) {
+          v = v || '';
           v = v.trim().replace(/\\Z/g, ',').replace(/\\Y/g, ':');
           return _this4._buildTypeDocLinkHTML(v);
         });
@@ -1307,10 +1306,12 @@ var DocBuilder = function () {
       ice.text('title', title);
 
       ice.loop('property', properties, function (i, prop, ice) {
+        var depth = Math.max((prop.name || '').split('.').length - 1, 0);
+
         ice.autoDrop = false;
-        ice.attr('property', 'data-depth', prop.name.split('.').length - 1);
+        ice.attr('property', 'data-depth', depth);
         ice.text('name', prop.name);
-        ice.attr('name', 'data-depth', prop.name.split('.').length - 1);
+        ice.attr('name', 'data-depth', depth);
         ice.load('description', prop.description);
 
         var typeNames = [];

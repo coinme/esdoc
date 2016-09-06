@@ -31,14 +31,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Doc Class from Variable Declaration AST node.
  */
-
 var VariableDoc = function (_AbstractDoc) {
   _inherits(VariableDoc, _AbstractDoc);
 
   function VariableDoc() {
     _classCallCheck(this, VariableDoc);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(VariableDoc).apply(this, arguments));
+    return _possibleConstructorReturn(this, (VariableDoc.__proto__ || Object.getPrototypeOf(VariableDoc)).apply(this, arguments));
   }
 
   _createClass(VariableDoc, [{
@@ -46,7 +45,7 @@ var VariableDoc = function (_AbstractDoc) {
 
     /** specify ``variable`` to kind. */
     value: function _kind() {
-      _get(Object.getPrototypeOf(VariableDoc.prototype), '@_kind', this).call(this);
+      _get(VariableDoc.prototype.__proto__ || Object.getPrototypeOf(VariableDoc.prototype), '@_kind', this).call(this);
       if (this._value.kind) return;
 
       this._value.kind = 'variable';
@@ -57,7 +56,7 @@ var VariableDoc = function (_AbstractDoc) {
   }, {
     key: '@_name',
     value: function _name() {
-      _get(Object.getPrototypeOf(VariableDoc.prototype), '@_name', this).call(this);
+      _get(VariableDoc.prototype.__proto__ || Object.getPrototypeOf(VariableDoc.prototype), '@_name', this).call(this);
       if (this._value.name) return;
 
       switch (this._node.declarations[0].id.type) {
@@ -80,7 +79,7 @@ var VariableDoc = function (_AbstractDoc) {
   }, {
     key: '@_memberof',
     value: function _memberof() {
-      _get(Object.getPrototypeOf(VariableDoc.prototype), '@_memberof', this).call(this);
+      _get(VariableDoc.prototype.__proto__ || Object.getPrototypeOf(VariableDoc.prototype), '@_memberof', this).call(this);
       if (this._value.memberof) return;
       this._value.memberof = this._pathResolver.filePath;
     }
@@ -90,7 +89,7 @@ var VariableDoc = function (_AbstractDoc) {
   }, {
     key: '@type',
     value: function type() {
-      _get(Object.getPrototypeOf(VariableDoc.prototype), '@type', this).call(this);
+      _get(VariableDoc.prototype.__proto__ || Object.getPrototypeOf(VariableDoc.prototype), '@type', this).call(this);
       if (this._value.type) return;
 
       if (this._node.declarations[0].init.type === 'NewExpression') {

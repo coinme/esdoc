@@ -17,7 +17,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /**
  * Utility for AST.
  */
-
 var ASTUtil = function () {
   function ASTUtil() {
     _classCallCheck(this, ASTUtil);

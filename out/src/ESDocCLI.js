@@ -46,13 +46,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * let cli = new ESDocCLI(process.argv);
  * cli.exec();
  */
-
 var ESDocCLI = function () {
   /**
    * Create instance.
    * @param {Object} argv - this is node.js argv(``process.argv``)
    */
-
   function ESDocCLI(argv) {
     _classCallCheck(this, ESDocCLI);
 

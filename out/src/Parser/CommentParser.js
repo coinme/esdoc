@@ -17,7 +17,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  *   console.log(tags);
  * }
  */
-
 var CommentParser = function () {
   function CommentParser() {
     _classCallCheck(this, CommentParser);

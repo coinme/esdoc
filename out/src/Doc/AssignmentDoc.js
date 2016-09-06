@@ -23,14 +23,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Doc Class for Assignment AST node.
  */
-
 var AssignmentDoc = function (_AbstractDoc) {
   _inherits(AssignmentDoc, _AbstractDoc);
 
   function AssignmentDoc() {
     _classCallCheck(this, AssignmentDoc);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(AssignmentDoc).apply(this, arguments));
+    return _possibleConstructorReturn(this, (AssignmentDoc.__proto__ || Object.getPrototypeOf(AssignmentDoc)).apply(this, arguments));
   }
 
   _createClass(AssignmentDoc, [{
@@ -40,7 +39,7 @@ var AssignmentDoc = function (_AbstractDoc) {
      * specify ``variable`` to kind.
      */
     value: function _kind() {
-      _get(Object.getPrototypeOf(AssignmentDoc.prototype), '@_kind', this).call(this);
+      _get(AssignmentDoc.prototype.__proto__ || Object.getPrototypeOf(AssignmentDoc.prototype), '@_kind', this).call(this);
       if (this._value.kind) return;
 
       this._value.kind = 'variable';
@@ -53,7 +52,7 @@ var AssignmentDoc = function (_AbstractDoc) {
   }, {
     key: '@_name',
     value: function _name() {
-      _get(Object.getPrototypeOf(AssignmentDoc.prototype), '@_name', this).call(this);
+      _get(AssignmentDoc.prototype.__proto__ || Object.getPrototypeOf(AssignmentDoc.prototype), '@_name', this).call(this);
       if (this._value.name) return;
 
       var name = this._flattenMemberExpression(this._node.left).replace(/^this\./, '');
@@ -67,7 +66,7 @@ var AssignmentDoc = function (_AbstractDoc) {
   }, {
     key: '@_memberof',
     value: function _memberof() {
-      _get(Object.getPrototypeOf(AssignmentDoc.prototype), '@_memberof', this).call(this);
+      _get(AssignmentDoc.prototype.__proto__ || Object.getPrototypeOf(AssignmentDoc.prototype), '@_memberof', this).call(this);
       if (this._value.memberof) return;
       this._value.memberof = this._pathResolver.filePath;
     }

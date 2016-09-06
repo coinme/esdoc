@@ -27,14 +27,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Doc Class from source file.
  */
-
 var FileDoc = function (_AbstractDoc) {
   _inherits(FileDoc, _AbstractDoc);
 
   function FileDoc() {
     _classCallCheck(this, FileDoc);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(FileDoc).apply(this, arguments));
+    return _possibleConstructorReturn(this, (FileDoc.__proto__ || Object.getPrototypeOf(FileDoc)).apply(this, arguments));
   }
 
   _createClass(FileDoc, [{
@@ -45,7 +44,7 @@ var FileDoc = function (_AbstractDoc) {
      * @private
      */
     value: function _apply() {
-      _get(Object.getPrototypeOf(FileDoc.prototype), '_apply', this).call(this);
+      _get(FileDoc.prototype.__proto__ || Object.getPrototypeOf(FileDoc.prototype), '_apply', this).call(this);
 
       delete this._value.export;
       delete this._value.importPath;
@@ -57,7 +56,7 @@ var FileDoc = function (_AbstractDoc) {
   }, {
     key: '@_kind',
     value: function _kind() {
-      _get(Object.getPrototypeOf(FileDoc.prototype), '@_kind', this).call(this);
+      _get(FileDoc.prototype.__proto__ || Object.getPrototypeOf(FileDoc.prototype), '@_kind', this).call(this);
       if (this._value.kind) return;
       this._value.kind = 'file';
     }
@@ -67,7 +66,7 @@ var FileDoc = function (_AbstractDoc) {
   }, {
     key: '@_name',
     value: function _name() {
-      _get(Object.getPrototypeOf(FileDoc.prototype), '@_name', this).call(this);
+      _get(FileDoc.prototype.__proto__ || Object.getPrototypeOf(FileDoc.prototype), '@_name', this).call(this);
       if (this._value.name) return;
       this._value.name = this._pathResolver.filePath;
     }
@@ -90,7 +89,7 @@ var FileDoc = function (_AbstractDoc) {
   }, {
     key: '@_content',
     value: function _content() {
-      _get(Object.getPrototypeOf(FileDoc.prototype), '@_content', this).call(this);
+      _get(FileDoc.prototype.__proto__ || Object.getPrototypeOf(FileDoc.prototype), '@_content', this).call(this);
       if ('content' in this._value) return;
 
       var filePath = this._pathResolver.fileFullPath;

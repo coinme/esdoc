@@ -27,13 +27,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /**
  * Resolve various properties in doc object.
  */
-
 var DocResolver = function () {
   /**
    * create instance.
    * @param {DocBuilder} builder - target doc builder.
    */
-
   function DocResolver(builder) {
     _classCallCheck(this, DocResolver);
 
@@ -337,8 +335,8 @@ var DocResolver = function () {
             } else if (v.see[i].indexOf('<a href') === 0) {
               // ignore
             } else {
-                v.see[i] = '<a href="' + v.see[i] + '">' + v.see[i] + '</a>';
-              }
+              v.see[i] = '<a href="' + v.see[i] + '">' + v.see[i] + '</a>';
+            }
           }
         }
       });

@@ -27,7 +27,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /**
  * Param Type Parser class.
  */
-
 var ParamParser = function () {
   function ParamParser() {
     _classCallCheck(this, ParamParser);

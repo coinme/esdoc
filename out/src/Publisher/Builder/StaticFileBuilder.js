@@ -25,14 +25,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Static file output builder class.
  */
-
 var StaticFileBuilder = function (_DocBuilder) {
   _inherits(StaticFileBuilder, _DocBuilder);
 
   function StaticFileBuilder() {
     _classCallCheck(this, StaticFileBuilder);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(StaticFileBuilder).apply(this, arguments));
+    return _possibleConstructorReturn(this, (StaticFileBuilder.__proto__ || Object.getPrototypeOf(StaticFileBuilder)).apply(this, arguments));
   }
 
   _createClass(StaticFileBuilder, [{

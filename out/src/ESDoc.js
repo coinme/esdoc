@@ -67,7 +67,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  *   console.log(results);
  * });
  */
-
 var ESDoc = function () {
   function ESDoc() {
     _classCallCheck(this, ESDoc);

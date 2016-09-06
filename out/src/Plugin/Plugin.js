@@ -18,12 +18,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /**
  * Plugin system for your plugin.
  */
-
 var Plugin = function () {
   /**
    * create instance.
    */
-
   function Plugin() {
     _classCallCheck(this, Plugin);
 

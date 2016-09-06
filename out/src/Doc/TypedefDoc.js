@@ -31,14 +31,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Doc class for virtual comment node of typedef.
  */
-
 var TypedefDoc = function (_AbstractDoc) {
   _inherits(TypedefDoc, _AbstractDoc);
 
   function TypedefDoc() {
     _classCallCheck(this, TypedefDoc);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(TypedefDoc).apply(this, arguments));
+    return _possibleConstructorReturn(this, (TypedefDoc.__proto__ || Object.getPrototypeOf(TypedefDoc)).apply(this, arguments));
   }
 
   _createClass(TypedefDoc, [{
@@ -49,7 +48,7 @@ var TypedefDoc = function (_AbstractDoc) {
      * @private
      */
     value: function _apply() {
-      _get(Object.getPrototypeOf(TypedefDoc.prototype), '_apply', this).call(this);
+      _get(TypedefDoc.prototype.__proto__ || Object.getPrototypeOf(TypedefDoc.prototype), '_apply', this).call(this);
 
       this['@typedef']();
 
@@ -63,7 +62,7 @@ var TypedefDoc = function (_AbstractDoc) {
   }, {
     key: '@_kind',
     value: function _kind() {
-      _get(Object.getPrototypeOf(TypedefDoc.prototype), '@_kind', this).call(this);
+      _get(TypedefDoc.prototype.__proto__ || Object.getPrototypeOf(TypedefDoc.prototype), '@_kind', this).call(this);
       if (this._value.kind) return;
       this._value.kind = 'typedef';
     }
@@ -125,7 +124,7 @@ var TypedefDoc = function (_AbstractDoc) {
   }, {
     key: '@_memberof',
     value: function _memberof() {
-      _get(Object.getPrototypeOf(TypedefDoc.prototype), '@_memberof', this).call(this);
+      _get(TypedefDoc.prototype.__proto__ || Object.getPrototypeOf(TypedefDoc.prototype), '@_memberof', this).call(this);
       if (this._value.memberof) return;
 
       var memberof = void 0;

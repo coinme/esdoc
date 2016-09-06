@@ -27,14 +27,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Doc Class from test code file.
  */
-
 var TestDoc = function (_AbstractDoc) {
   _inherits(TestDoc, _AbstractDoc);
 
   function TestDoc() {
     _classCallCheck(this, TestDoc);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(TestDoc).apply(this, arguments));
+    return _possibleConstructorReturn(this, (TestDoc.__proto__ || Object.getPrototypeOf(TestDoc)).apply(this, arguments));
   }
 
   _createClass(TestDoc, [{
@@ -45,7 +44,7 @@ var TestDoc = function (_AbstractDoc) {
      * @private
      */
     value: function _apply() {
-      _get(Object.getPrototypeOf(TestDoc.prototype), '_apply', this).call(this);
+      _get(TestDoc.prototype.__proto__ || Object.getPrototypeOf(TestDoc.prototype), '_apply', this).call(this);
 
       this['@testTarget']();
 
@@ -59,7 +58,7 @@ var TestDoc = function (_AbstractDoc) {
   }, {
     key: '@_kind',
     value: function _kind() {
-      _get(Object.getPrototypeOf(TestDoc.prototype), '@_kind', this).call(this);
+      _get(TestDoc.prototype.__proto__ || Object.getPrototypeOf(TestDoc.prototype), '@_kind', this).call(this);
       if (this._value.kind) return;
 
       switch (this._node.callee.name) {
@@ -82,7 +81,7 @@ var TestDoc = function (_AbstractDoc) {
   }, {
     key: '@_name',
     value: function _name() {
-      _get(Object.getPrototypeOf(TestDoc.prototype), '@_name', this).call(this);
+      _get(TestDoc.prototype.__proto__ || Object.getPrototypeOf(TestDoc.prototype), '@_name', this).call(this);
       if (this._value.name) return;
 
       this._value.name = this._node._esdocTestName;
@@ -94,7 +93,7 @@ var TestDoc = function (_AbstractDoc) {
   }, {
     key: '@_memberof',
     value: function _memberof() {
-      _get(Object.getPrototypeOf(TestDoc.prototype), '@_memberof', this).call(this);
+      _get(TestDoc.prototype.__proto__ || Object.getPrototypeOf(TestDoc.prototype), '@_memberof', this).call(this);
       if (this._value.memberof) return;
 
       var chain = [];
@@ -120,7 +119,7 @@ var TestDoc = function (_AbstractDoc) {
   }, {
     key: '@desc',
     value: function desc() {
-      _get(Object.getPrototypeOf(TestDoc.prototype), '@desc', this).call(this);
+      _get(TestDoc.prototype.__proto__ || Object.getPrototypeOf(TestDoc.prototype), '@desc', this).call(this);
       if (this._value.description) return;
 
       this._value.description = this._node.arguments[0].value;

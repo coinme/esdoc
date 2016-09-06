@@ -35,7 +35,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * Source output html builder class.
  */
-
 var SourceDocBuilder = function (_DocBuilder) {
   _inherits(SourceDocBuilder, _DocBuilder);
 
@@ -45,11 +44,10 @@ var SourceDocBuilder = function (_DocBuilder) {
    * @param {ESDocConfig} config - use config to build output.
    * @param {CoverageObject} coverage - use coverage to build output.
    */
-
   function SourceDocBuilder(data, config, coverage) {
     _classCallCheck(this, SourceDocBuilder);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SourceDocBuilder).call(this, data, config));
+    var _this = _possibleConstructorReturn(this, (SourceDocBuilder.__proto__ || Object.getPrototypeOf(SourceDocBuilder)).call(this, data, config));
 
     _this._coverage = coverage;
     return _this;
