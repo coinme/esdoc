@@ -709,7 +709,7 @@ export default class DocBuilder {
         innerTypes = inner.split(',').map((v)=>{
           let tmp = v.split(':').map((v)=> v.trim());
           let paramName = tmp[0];
-          let typeName = (tmp[1]|'').replace(/\\Z/g, ',').replace(/\\Y/g, ':');
+          let typeName = (tmp[1]||'').replace(/\\Z/g, ',').replace(/\\Y/g, ':');
           return `${paramName}: ${this._buildTypeDocLinkHTML(typeName)}`;
         });
       }

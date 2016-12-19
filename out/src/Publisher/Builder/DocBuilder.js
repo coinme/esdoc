@@ -939,7 +939,7 @@ var DocBuilder = function () {
               return v.trim();
             });
             var paramName = tmp[0];
-            var typeName = (tmp[1] | '').replace(/\\Z/g, ',').replace(/\\Y/g, ':');
+            var typeName = (tmp[1] || '').replace(/\\Z/g, ',').replace(/\\Y/g, ':');
             return paramName + ': ' + _this4._buildTypeDocLinkHTML(typeName);
           });
         }
